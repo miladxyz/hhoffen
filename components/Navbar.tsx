@@ -19,42 +19,45 @@ const Navbar = () => {
   const [query, setQuery] = useState("");
 
   return (
-    <div className="sticky top-0 z-10 py-2 px-10 flex gap-2 justify-between items-center bg-white max-sm:px-2">
-      <Link href="/">
-        <Image src="/logo.png" alt="logo" width={130} height={100} />
-      </Link>
+    <div className="sticky top-0 z-10 py-2 px-10 flex gap-2 justify-between items-center bg-[#E1DCCD] max-sm:px-2 border-b-4 border-b-[#46000C]">
 
       <div className="flex gap-4 text-base-bold max-lg:hidden">
         <Link
           href="/"
-          className={`hover:text-red-1 ${
-            pathname === "/" && "text-red-1"
+          className={`hover:text-[#46000C] ${
+            pathname === "/" && "text-[#46000C]"
           }`}
         >
-          Home
+          خانه
         </Link>
         <Link
           href={user ? "/wishlist" : "/sign-in"}
-          className={`hover:text-red-1 ${
-            pathname === "/wishlist" && "text-red-1"
+          className={`hover:text-[#46000C] ${
+            pathname === "/wishlist" && "text-[#46000C]"
           }`}
         >
-          Wishlist
+           علاقه مندی
         </Link>
         <Link
           href={user ? "/orders" : "/sign-in"}
-          className={`hover:text-red-1 ${
-            pathname === "/orders" && "text-red-1"
+          className={`hover:text-[#46000C] ${
+            pathname === "/orders" && "text-[#46000C]"
           }`}
         >
-          Orders
+          سفارشات
         </Link>
+        <Link
+              href={user ? "/aboutUs" : "/sign-in"}
+              className="hover:text-[#46000C]"
+            >
+              درباره ما
+            </Link>
       </div>
 
       <div className="flex gap-3 border border-grey-2 px-3 py-1 items-center rounded-lg">
         <input
-          className="outline-none max-sm:max-w-[120px]"
-          placeholder="Search..."
+          className="outline-none max-sm:max-w-[120px] bg-[#E1DCCD]"
+          placeholder="جستجو..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
@@ -62,17 +65,17 @@ const Navbar = () => {
           disabled={query === ""}
           onClick={() => router.push(`/search/${query}`)}
         >
-          <Search className="cursor-pointer h-4 w-4 hover:text-red-1" />
+          <Search className="cursor-pointer h-4 w-4 hover:text-[#46000C]" />
         </button>
       </div>
 
       <div className="relative flex gap-3 items-center">
         <Link
           href="/cart"
-          className="flex items-center gap-3 border rounded-lg px-2 py-1 hover:bg-black hover:text-white max-md:hidden"
+          className="flex items-center gap-3 border rounded-lg px-2 py-1 hover:bg-[#46000C] hover:text-white max-md:hidden"
         >
           <ShoppingCart />
-          <p className="text-base-bold">Cart ({cart.cartItems.length})</p>
+          <p className="text-base-bold">سبد خرید ({cart.cartItems.length})</p>
         </Link>
 
         <Menu
@@ -82,27 +85,33 @@ const Navbar = () => {
 
         {dropdownMenu && (
           <div className="absolute top-12 right-5 flex flex-col gap-4 p-3 rounded-lg border bg-white text-base-bold lg:hidden">
-            <Link href="/" className="hover:text-red-1">
-              Home
+            <Link href="/" className="hover:text-[#46000C]">
+              خانه
             </Link>
             <Link
               href={user ? "/wishlist" : "/sign-in"}
-              className="hover:text-red-1"
+              className="hover:text-[#46000C]"
             >
-              Wishlist
+              لیست علاقه‌مندی
             </Link>
             <Link
               href={user ? "/orders" : "/sign-in"}
-              className="hover:text-red-1"
+              className="hover:text-[#46000C]"
             >
-              Orders
+              سفارشات
+            </Link>
+            <Link
+              href={user ? "/aboutUs" : "/sign-in"}
+              className="hover:text-[#46000C]"
+            >
+              درباره ما
             </Link>
             <Link
               href="/cart"
               className="flex items-center gap-3 border rounded-lg px-2 py-1 hover:bg-black hover:text-white"
             >
               <ShoppingCart />
-              <p className="text-base-bold">Cart ({cart.cartItems.length})</p>
+              <p className="text-base-bold">سبد خرید ({cart.cartItems.length})</p>
             </Link>
           </div>
         )}
@@ -114,6 +123,9 @@ const Navbar = () => {
             <CircleUserRound />
           </Link>
         )}
+        <Link href="/">
+          <Image src="/logo.png" alt="logo" width={130} height={100} />
+        </Link>
       </div>
     </div>
   );

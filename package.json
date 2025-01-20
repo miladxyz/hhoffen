@@ -1,5 +1,5 @@
 {
-  "name": "borcella_store",
+  "name": "hoffen",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.7",
+    "@clerk/nextjs": "^6.9.6",
     "@stripe/stripe-js": "^3.0.6",
     "lucide-react": "^0.341.0",
     "mongoose": "^8.2.0",

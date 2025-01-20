@@ -45,16 +45,16 @@ const Cart = () => {
   return (
     <div className="flex gap-20 py-16 px-10 max-lg:flex-col max-sm:px-3">
       <div className="w-2/3 max-lg:w-full">
-        <p className="text-heading3-bold">Shopping Cart</p>
-        <hr className="my-6" />
+        <p className="text-heading3-bold">سبد خرید</p>
+        <hr className="my-6 border-[#46000C]" />
 
         {cart.cartItems.length === 0 ? (
-          <p className="text-body-bold">No item in cart</p>
+          <p className="text-body-bold">سبد خرید خالی می‌باشد</p>
         ) : (
           <div>
             {cart.cartItems.map((cartItem) => (
-              <div className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-grey-1 px-4 py-3 items-center max-sm:items-start justify-between">
-                <div className="flex items-center">
+              <div className="w-full flex max-sm:flex-col max-sm:gap-3 hover:bg-[#E1DCCD] px-4 py-3 items-center max-sm:items-start justify-between">
+                <div className="flex items-center justify-between gap-[100px]">
                   <Image
                     src={cartItem.item.media[0]}
                     width={100}
@@ -70,24 +70,24 @@ const Cart = () => {
                     {cartItem.size && (
                       <p className="text-small-medium">{cartItem.size}</p>
                     )}
-                    <p className="text-small-medium">${cartItem.item.price}</p>
+                    <p className="text-small-medium">{cartItem.item.price} تومان</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4 items-center">
-                  <MinusCircle
-                    className="hover:text-red-1 cursor-pointer"
-                    onClick={() => cart.decreaseQuantity(cartItem.item._id)}
+                <PlusCircle
+                    className="hover:text-[#46000C] cursor-pointer"
+                    onClick={() => cart.increaseQuantity(cartItem.item._id)}
                   />
                   <p className="text-body-bold">{cartItem.quantity}</p>
-                  <PlusCircle
-                    className="hover:text-red-1 cursor-pointer"
-                    onClick={() => cart.increaseQuantity(cartItem.item._id)}
+                  <MinusCircle
+                    className="hover:text-[#46000C] cursor-pointer"
+                    onClick={() => cartItem.quantity > 1 && cart.decreaseQuantity(cartItem.item._id)}
                   />
                 </div>
 
                 <Trash
-                  className="hover:text-red-1 cursor-pointer"
+                  className="hover:text-[#46000C] cursor-pointer"
                   onClick={() => cart.removeItem(cartItem.item._id)}
                 />
               </div>
@@ -96,22 +96,22 @@ const Cart = () => {
         )}
       </div>
 
-      <div className="w-1/3 max-lg:w-full flex flex-col gap-8 bg-grey-1 rounded-lg px-4 py-5">
+      <div className="w-1/3 max-lg:w-full flex flex-col gap-8 bg-[#46000C] rounded-lg px-4 py-5 text-[#E1DCCD]">
         <p className="text-heading4-bold pb-4">
-          Summary{" "}
+          صورتحساب{" "}
           <span>{`(${cart.cartItems.length} ${
-            cart.cartItems.length > 1 ? "items" : "item"
+            cart.cartItems.length > 1 ? "محصولات" : "محصول"
           })`}</span>
         </p>
         <div className="flex justify-between text-body-semibold">
-          <span>Total Amount</span>
-          <span>$ {totalRounded}</span>
+          <span>مجموع</span>
+          <span>{totalRounded} تومان</span>
         </div>
         <button
-          className="border rounded-lg text-body-bold bg-white py-3 w-full hover:bg-black hover:text-white"
+          className="text-[black] hover:text-[#E1DCCD] border rounded-lg text-body-bold bg-[#E1DCCD] py-3 w-full hover:bg-[rgb(70,0,12)]"
           onClick={handleCheckout}
         >
-          Proceed to Checkout
+          ادامه پرداخت
         </button>
       </div>
     </div>
