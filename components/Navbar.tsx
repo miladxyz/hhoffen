@@ -124,7 +124,10 @@ const Navbar = () => {
           </Link>
         )}
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={130} height={100} />
+            <div className="text-[28px] font-extrabold text-[#46000C]">
+              HOFFEN
+            </div>
+          {/* <Image src="/logo.png" alt="logo" width={130} height={100} /> */}
         </Link>
       </div>
     </div>
