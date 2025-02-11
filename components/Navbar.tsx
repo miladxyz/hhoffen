@@ -8,6 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+import { Exo } from "next/font/google";
+
+const exo = Exo({ subsets: ["latin"] });
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -124,7 +127,7 @@ const Navbar = () => {
           </Link>
         )}
         <Link href="/">
-            <div className="text-[28px] font-bold text-[#46000C]">
+            <div className="text-[28px] font-bold text-[#46000C] font-[exo]">
               HOFFEN
             </div>
           {/* <Image src="/logo.png" alt="logo" width={130} height={100} /> */}
