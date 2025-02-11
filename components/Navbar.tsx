@@ -124,7 +124,7 @@ const Navbar = () => {
           </Link>
         )}
         <Link href="/">
-            <div className="text-[28px] font-extrabold text-[#46000C]">
+            <div className="text-[28px] font-bold text-[#46000C]">
               HOFFEN
             </div>
           {/* <Image src="/logo.png" alt="logo" width={130} height={100} /> */}
