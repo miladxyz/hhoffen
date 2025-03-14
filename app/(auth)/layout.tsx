@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Vazirmatn({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "هفن",
+  title: "328925",
   description: "فروشگاه لباس هفن",
 };
 
