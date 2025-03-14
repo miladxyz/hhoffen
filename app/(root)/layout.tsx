@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="rtl">
+      <head>
+        <meta name="enamad" content="328925" />
+      </head>
       <body className={inter.className}>
         <ClerkProvider>
           <ToasterProvider />
