@@ -1,7 +1,10 @@
 // components/Footer.js
 export default function Footer() {
-  return ( 
-    <footer className="bg-gray-800 text-white py-6 border-t-[4px] border-t-[#46000C]" dir="ltr">
+  return (
+    <footer
+      className="bg-gray-800 text-white py-6 border-t-[4px] border-t-[#46000C]"
+      dir="ltr"
+    >
       <div className="container mx-auto flex justify-between items-center">
         {/* Instagram Link Section */}
         <div className="flex items-center space-x-2">
@@ -46,6 +49,19 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Hoffen. All Rights Reserved.
         </p>
       </div>
+      <a
+        referrerPolicy="origin"
+        target="_blank"
+        href="https://trustseal.enamad.ir/?id=591219&Code=2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
+      >
+        <img
+          referrerPolicy="origin"
+          src="https://trustseal.enamad.ir/logo.aspx?id=591219&Code=2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
+          alt=""
+          code="2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
+          style={{cursor:'pointer'}}
+        />
+      </a>
     </footer>
   );
 }
