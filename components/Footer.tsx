@@ -55,6 +55,8 @@ export default function Footer() {
         href="https://trustseal.enamad.ir/?id=591219&Code=2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
       >
         <img
+          width={75}
+          height={75}
           referrerPolicy="origin"
           src="https://trustseal.enamad.ir/logo.aspx?id=591219&Code=2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
           alt=""
