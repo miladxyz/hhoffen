@@ -58,7 +58,7 @@ export default function Footer() {
           referrerPolicy="origin"
           src="https://trustseal.enamad.ir/logo.aspx?id=591219&Code=2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
           alt=""
-          code="2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
+          data-code="2aF6lcw64I594GWxFiud2m6Wc2zHIad0"
           style={{cursor:'pointer'}}
         />
       </a>
